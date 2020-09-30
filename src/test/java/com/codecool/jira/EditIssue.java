@@ -8,7 +8,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class TestPlan {
+public class EditIssue {
     private static final WebDriver driver = new ChromeDriver();
 
     @BeforeSuite
@@ -17,20 +17,21 @@ public class TestPlan {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     }
 
-    @Test(testName = "Successful Login")
-    public static void successfulLogin() throws InterruptedException {
+    @Test(testName = "Edit Issue")
+    public static void editIssue() throws InterruptedException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user6");
+        driver.findElement(By.id("login-form-username")).sendKeys("user7");
         driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
-        driver.get("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
-        Assert.assertEquals(driver.findElement(By.id("up-d-username")).getText(), "user6");
+        driver.get("https://jira.codecool.codecanvas.hu/browse/MTP-1654");
+        Assert.assertEquals(driver.findElement(By.linkText("Edit")).getText(), "Edit");
+        driver.findElement(By.xpath("//a[@id='edit-issue']")).click();
     }
-
+/*
     @AfterSuite
     public static void cleanUp(){
         driver.manage().deleteAllCookies();
         driver.close();
-    }
+    }*/
 }
