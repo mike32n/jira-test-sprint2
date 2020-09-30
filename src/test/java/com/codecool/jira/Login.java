@@ -8,6 +8,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class Login {
     private static final WebDriver driver = new ChromeDriver();
 
@@ -17,10 +19,10 @@ public class Login {
     }
 
     @Test(testName = "Successful Login")
-    public static void successfulLogin() throws InterruptedException {
+    public static void successfulLogin() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user6");
-        driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
+        driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
+        driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
         driver.get("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
@@ -30,10 +32,10 @@ public class Login {
     }
 
     @Test(testName = "Alternative Login")
-    public static void alternativeLogin() throws InterruptedException {
+    public static void alternativeLogin() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/login.jsp");
-        driver.findElement(By.id("login-form-username")).sendKeys("user6");
-        driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
+        driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
+        driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login-form-submit")).click();
         Thread.sleep(1000);
         driver.get("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
@@ -43,15 +45,15 @@ public class Login {
     }
 
     @Test(testName = "No Password Login")
-    public static void noPasswordLogin() throws InterruptedException {
+    public static void noPasswordLogin() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user6");
+        driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
         Assert.assertEquals(driver.findElement(By.xpath("//div[@id='usernameerror']/p")).getText(), "Sorry, your username and password are incorrect - please try again.");
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user6");
-        driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
+        driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
+        driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
