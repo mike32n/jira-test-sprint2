@@ -33,6 +33,7 @@ public class Login {
 
     @Test(testName = "Alternative Login")
     public static void alternativeLogin() throws InterruptedException, IOException {
+        driver.manage().window().maximize();
         driver.get("https://jira.codecool.codecanvas.hu/login.jsp");
         driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
