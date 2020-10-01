@@ -20,6 +20,7 @@ public class Logout {
 
     @Test(testName = "Successful Logout")
     public static void successfulLogout() throws InterruptedException, IOException {
+        driver.manage().window().maximize();
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
         driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
