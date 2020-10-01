@@ -21,6 +21,7 @@ public class Login {
     @Test(testName = "Successful Login")
     public static void successfulLogin() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
+        Thread.sleep(500);
         driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login")).click();
@@ -35,6 +36,7 @@ public class Login {
     public static void alternativeLogin() throws InterruptedException, IOException {
         driver.manage().window().maximize();
         driver.get("https://jira.codecool.codecanvas.hu/login.jsp");
+        Thread.sleep(500);
         driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login-form-submit")).click();
@@ -48,6 +50,7 @@ public class Login {
     @Test(testName = "Login Without Password")
     public static void loginWithoutPassword() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
+        Thread.sleep(500);
         driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
@@ -64,6 +67,7 @@ public class Login {
     @Test(testName = "Login Without Credentials")
     public static void loginWithoutCredentials() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
+        Thread.sleep(500);
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
         Assert.assertEquals(driver.findElement(By.xpath("//div[@id='usernameerror']/p")).getText(), "Sorry, your username and password are incorrect - please try again.");
