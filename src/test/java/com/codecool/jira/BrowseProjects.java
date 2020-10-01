@@ -8,6 +8,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class BrowseProjects {
     private static final WebDriver driver = new ChromeDriver();
 
@@ -19,10 +21,10 @@ public class BrowseProjects {
     }
 
     @Test(testName = "Browse Project")
-    public static void browseProject() throws InterruptedException {
+    public static void browseProject() throws InterruptedException, IOException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user7");
-        driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
+        driver.findElement(By.id("login-form-username")).sendKeys(ReadLoginProperties.getUsername());
+        driver.findElement(By.id("login-form-password")).sendKeys(ReadLoginProperties.getPassword());
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
         driver.get("https://jira.codecool.codecanvas.hu/projects/MTP/summary");
