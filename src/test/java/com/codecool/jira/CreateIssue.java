@@ -128,9 +128,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("TOUCAN projekt (TOUCAN)"));
         Assert.assertTrue(driver.getPageSource().contains("Story"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -163,9 +163,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("TOUCAN projekt (TOUCAN)"));
         Assert.assertTrue(driver.getPageSource().contains("Task"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -198,9 +198,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("TOUCAN projekt (TOUCAN)"));
         Assert.assertTrue(driver.getPageSource().contains("Bug"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -233,9 +233,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("JETI Project (JETI)"));
         Assert.assertTrue(driver.getPageSource().contains("Story"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -268,9 +268,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("JETI project (JETI)"));
         Assert.assertTrue(driver.getPageSource().contains("Task"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -303,9 +303,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("JETI Project (JETI)"));
         Assert.assertTrue(driver.getPageSource().contains("Bug"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -338,9 +338,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("COALA Project (COALA)"));
         Assert.assertTrue(driver.getPageSource().contains("Story"));
-
+        Thread.sleep(1500);
         driver.findElement(By.linkText("Cancel")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -373,9 +373,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("COALA Project (COALA)"));
         Assert.assertTrue(driver.getPageSource().contains("Task"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
@@ -408,9 +408,9 @@ public class CreateIssue {
 
         Assert.assertTrue(driver.getPageSource().contains("COALA Project (COALA)"));
         Assert.assertTrue(driver.getPageSource().contains("Bug"));
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//div[@id='create-issue-dialog']/div[2]/div/div/form/div[2]/div/a")).click();
-
+        Thread.sleep(1500);
         driver.findElement(By.xpath("//a[@id='header-details-user-fullname']/span/span/img")).click();
         driver.findElement(By.id("log_out")).click();
 
