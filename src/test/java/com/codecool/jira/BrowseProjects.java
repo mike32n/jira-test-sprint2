@@ -14,6 +14,7 @@ public class BrowseProjects {
     @BeforeSuite
     public static void main(String[] args) {
         // ChromeDriver location set up in Utils class
+
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
     }
 

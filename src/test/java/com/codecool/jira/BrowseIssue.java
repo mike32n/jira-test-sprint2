@@ -20,7 +20,7 @@ public class BrowseIssue {
     @Test(testName = "Browse Issue")
     public static void browseIssue() throws InterruptedException {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        driver.findElement(By.id("login-form-username")).sendKeys("user7");
+        driver.findElement(By.id("login-form-username")).sendKeys("user6");
         driver.findElement(By.id("login-form-password")).sendKeys("CoolCanvas19.");
         driver.findElement(By.id("login")).click();
         Thread.sleep(1000);
