@@ -42,11 +42,11 @@ public class GlassComponents {
         Assert.assertEquals(driver.findElement(By.xpath("//td[contains(.,'glass test')]")).getText(),"glass test");
         driver.findElement(By.xpath("//li[6]/a/span")).click();
         driver.findElement(By.xpath("//input[@id='component-filter-text']")).sendKeys("glass test");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector(".item-state-ready:nth-child(1) .aui-button")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.linkText("Delete")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//input[@id='submit']")).click();
     }
 
