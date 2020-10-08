@@ -37,7 +37,7 @@ public class GlassComponents {
         driver.findElement(By.id("assigneeType-field")).click();
         driver.findElement(By.id("assigneeType-field")).sendKeys("Project default (Project lead)");
         driver.findElement(By.cssSelector(".aui-page-header-fixed")).click();
-        driver.findElement(By.xpath("//form[@id='components-add__component']/div[5]/button")).click();
+        driver.findElement(By.xpath("//form[@id='components-add__component']//button")).click();
         driver.get("https://jira.codecool.codecanvas.hu/projects/PP5?selectedItem=com.codecanvas.glass:glass");
         Assert.assertEquals(driver.findElement(By.xpath("//td[contains(.,'glass test')]")).getText(),"glass test");
         driver.findElement(By.xpath("//li[6]/a/span")).click();
